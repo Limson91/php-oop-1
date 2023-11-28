@@ -8,16 +8,37 @@ class Production {
     public $rating;
 
     // costruttore
-    public function __construct($title, $language, $rating) {
-        $this->title = $title;
-        $this->language = $language;
-        $this->rating = $rating;
+    public function __construct($_title, $_language, $_rating) {
+        $this->title = $_title;
+        $this->language = $_language;
+        $this->setRating($_rating);
+    }
+
+    public function setRating($rating) {
+        if(is_numeric($rating) && $rating >= 0 && $rating <= 10) {
+            $this->rating = floatval($rating);
+        } else {
+            $this->rating = null;
+            var_dump('$rating non valido');
+        }
     }
 
     public function getMovie(){
         $languageList = implode($this->language);
 
         return $this->title.' '.$languageList.' '.$this->rating;
+    }
+
+    public function getTitle() {
+        return $this->title;
+    }
+
+    public function getLanguage() {
+        return $this->language;
+    }
+
+    public function getRating() {
+        return $this->rating;
     }
 }
 
@@ -46,3 +67,15 @@ $lotrKing = new Production('The Lord of the Rings: The Return of the King', ['Bu
 echo $lotrKing->getMovie();
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
