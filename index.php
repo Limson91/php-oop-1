@@ -66,6 +66,16 @@ echo "<br>";
 $lotrKing = new Production('The Lord of the Rings: The Return of the King', ['Bulgarian ', 'Catalan ', 'Icelandic '], '9.0');
 echo $lotrKing->getMovie();
 
+
+$productions = [
+    $starWarsIV,
+    $starWarsV,
+    $starWarsVI,
+    $lotrFellowship,
+    $lotrTowers,
+    $lotrKing
+];
+
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +85,26 @@ echo $lotrKing->getMovie();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div class="container">
+        <table>
+            <thead>
+                <th>Titolo</th>
+                <th>Lingue disponibili</th>
+                <th>Voto</th>
+            </thead>
+
+            <tbody>
+                <?php foreach($productions as $movie) { ?>
+                    <tr>
+                        <td><?php $movie->getTitle()?></td>
+                        <td><?php $movie->getLanguage()?></td>
+                        <td><?php $movie->getRating()?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>    
 </body>
 </html>
