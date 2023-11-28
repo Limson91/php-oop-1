@@ -14,13 +14,35 @@ class Movies {
         $this->rating = $rating;
     }
 
-    public function getMovie(){}
+    public function getMovie(){
+        $languageList = implode($this->language);
 
-    //dichiarazione oggetti
-    //movie = new Movie
-    //movie = new Movie
-    //movie = new Movie
-    //movie = new Movie
+        return $this->title.' '.$languageList.' '.$this->rating;
+    }
 }
+
+//dichiarazione oggetti
+$starWarsIV = new Movies('Star Wars - A New Hope', ['English ', 'Spanish ', 'German ', 'Italian '], '8.6');
+echo $starWarsIV->getMovie();
+echo "<br>";
+
+$starWarsV = new Movies('Star Wars - The Empire Strikes Back', ['English ', 'Dutch ', 'Japanese '], '8.7');
+echo $starWarsV->getMovie();
+echo "<br>";
+
+$starWarsVI = new Movies('Star Wars - Return of the Jedi', ['German ', 'Korean ', 'Portuguese ', 'Friulano '], '8.3');
+echo $starWarsVI->getMovie();
+echo "<br>";
+
+$lotrFellowship = new Movies('The Lord of the Rings: The Fellowship of the Ring', ['Estonian ', 'Finnish ', 'Latin ' ], '8.8');
+echo $lotrFellowship->getMovie();
+echo "<br>";
+
+$lotrTowers = new Movies('The Lord of the Rings: The Two Towers', ['Romagnolo ', 'Toscano ', 'Klingon '], '8.8');
+echo $lotrTowers->getMovie();
+echo "<br>";
+
+$lotrKing = new Movies('The Lord of the Rings: The Return of the King', ['Bulgarian ', 'Catalan ', 'Icelandic '], '9.0');
+echo $lotrKing->getMovie();
 
 ?>
