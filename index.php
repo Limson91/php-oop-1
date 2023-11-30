@@ -29,17 +29,17 @@ class Production {
         return $this->title.' '.$languageList.' '.$this->rating;
     }
 
-    public function getTitle() {
-        return $this->title;
-    }
+    // public function getTitle() {
+    //     return $this->title;
+    // }
 
-    public function getLanguage() {
-        return $this->language;
-    }
+    // public function getLanguage() {
+    //     return $this->language;
+    // }
 
-    public function getRating() {
-        return $this->rating;
-    }
+    // public function getRating() {
+    //     return $this->rating;
+    // }
 }
 
 //dichiarazione oggetti
@@ -67,44 +67,13 @@ $lotrKing = new Production('The Lord of the Rings: The Return of the King', ['Bu
 echo $lotrKing->getMovie();
 
 
-$productions = [
-    $starWarsIV,
-    $starWarsV,
-    $starWarsVI,
-    $lotrFellowship,
-    $lotrTowers,
-    $lotrKing
-];
+// $productions = [
+//     $starWarsIV,
+//     $starWarsV,
+//     $starWarsVI,
+//     $lotrFellowship,
+//     $lotrTowers,
+//     $lotrKing
+// ];
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="container">
-        <table>
-            <thead>
-                <th>Titolo</th>
-                <th>Lingue disponibili</th>
-                <th>Voto</th>
-            </thead>
-
-            <tbody>
-                <?php foreach($productions as $movie) { ?>
-                    <tr>
-                        <td><?php $movie->getTitle()?></td>
-                        <td><?php $movie->getLanguage()?></td>
-                        <td><?php $movie->getRating()?></td>
-                    </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-    </div>    
-</body>
-</html>
